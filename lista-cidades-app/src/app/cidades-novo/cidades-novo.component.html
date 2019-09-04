@@ -1,0 +1,29 @@
+<div>
+    <h3>Adicionar Nova Cidade</h3>
+</div>
+<form class="example-container" [formGroup]="productForm" (ngSubmit)="addCidade(productForm.value)">
+    <mat-form-field>
+        <input matInput name="ibge_id" placeholder="IBGE da Cidade" formControlName="ibge_id">
+    </mat-form-field>
+    <mat-form-field>
+        <input  matInput name="uf" placeholder="UF da Cidade" formControlName="uf">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="name" placeholder="Nome da Cidade" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Capital</mat-label>
+        <select matNativeControl required>
+            <option value="false">Não</option>
+            <option value="true">Sim</option>
+        </select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="lon" placeholder="Longetude" formControlName="lon">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="lat" placeholder="Latitude" formControlName="lat">
+    </mat-form-field>
+      
+    <button type="submit" [disabled]="!productForm.valid" mat-button color="primary" >Adicionar Cidade</button>
+</form>

@@ -1,0 +1,29 @@
+
+<div class="example-container mat-elevation-z8">
+        <div class="example-loading-shade"
+             *ngIf="isLoadingResults">
+          <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+        </div>
+        <div class="button-row">
+          <button mat-flat-button color="accent" [routerLink]="['/cidades']"><mat-icon>list</mat-icon> Voltar</button>
+        </div>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title><h2>{{cidades.name}}</h2></mat-card-title>
+            <mat-card-subtitle>{{cidades.uf}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <dl>
+              <dt>IBGE:</dt>
+              <dd>{{cidades.ibge_id}}</dd>
+              <dt>Coordenadas:</dt>
+              <dd>{{cidades.lat}}</dd>
+              <dd>{{cidades.lon}}</dd>
+            </dl>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-flat-button color="primary" class="teste" [routerLink]="['/cidades-editar', cidades._id]"><mat-icon>Editar</mat-icon> Editar</button>
+            <button mat-flat-button color="warn" (click)="deleteCidades(cidades._id)"><mat-icon>delete</mat-icon> Excluir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
